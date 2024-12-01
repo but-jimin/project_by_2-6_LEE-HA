@@ -1,0 +1,236 @@
+#wrapper{
+    html, body {
+        margin: 0; /* 브라우저 기본 여백 제거 */
+        height: 100%; /* 전체 높이를 차지하도록 설정 */
+      }
+  
+    background-image: url("some.jpg");
+    background-size: contain; 
+    background-repeat: repeat;
+    background-position: center center; /* 중앙 정렬 */
+    background-color: #ffffff; /* 배경색 (필요 시 설정) */
+}
+
+/* 상단 div 왼쪽 상단 고정 및 반투명 배경 설정 */
+#wrapper
+.top{
+    background-color: rgba(216, 213, 255, 0.5); /* 검정색 반투명 배경 */
+    color: #000000; /* 텍스트 색상 흰색 */
+    padding: 10px 20px; /* 상하, 좌우 여백 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    width: auto; /* 내용에 맞게 너비 설정 */
+    font-size: 1.2em; /* 글씨 크기 */
+    position: fixed; /* 위치 고정 */
+    top: 0; /* 화면 상단에 위치 */
+    left: 0; /* 화면 왼쪽에 위치 */
+    z-index: 1; /* 다른 요소 위에 위치 */
+    border-radius: 0 0 8px 0; /* 오른쪽 아래 모서리만 둥글게 */
+}
+
+
+
+#wrapper
+.middle{
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(216, 213, 255);
+    padding: 40px;
+}
+
+.bottom{
+    min-height: 200px;
+    padding: 40px;
+    gap: 50px;
+}
+
+.popup_box{
+    background-color: white;
+    width: 80%;
+    height: 500px;
+}
+
+#wrapper div.middle
+h3{
+
+}
+
+
+/* 전체 배경 설정 */
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 내용이 상단에 배치되도록 설정 */
+    flex-direction: column;
+    background-image: url('some.jpg'); /* 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px; 
+    color: #fff; /* 텍스트 색상 흰색 */
+    padding: 20px;
+}
+
+
+
+
+#wrapper div.middle
+.btn-list{
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center;
+}
+
+#wrapper div.bottom
+.btn-list{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: 50px;
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center; /* 교차 축을 따라 요소들을 수평 방향으로 중앙 정렬 */
+    padding-bottom: 20px;
+}
+
+#wrapper div.bottom ul.btn-list
+li{
+    display: block;
+    cursor: pointer;
+    background-color: rgba(218, 152, 250, 0.5);
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a :visited{
+    color:white;
+}
+
+#wrapper div.bottom ul.btn-list
+li:hover{
+    background-color: rgb(107, 164, 231, 0.5);
+}
+
+.modal{
+    margin-left:-200px;
+    margin-top:-106.5px;
+    display: block;
+    padding:0 25px;
+    width:400px;
+    height:290px;
+    box-sizing: border-box;
+}
+
+.box-img {
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center; /* 교차 축을 따라 요소들을 수평 방향으로 중앙 정렬 */
+    padding: 25px;
+}
+
+.paragraph{
+    width: 1000px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% 불투명한 흰색 배경 */
+   margin-top: 20px;
+   margin-bottom: 40px;
+   font-size:15px;
+   justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+   align-items: center;
+}
+
+
+p{
+    text-align: left;
+}
+
+.sign{
+    font-size: 14px;
+    color: gray;
+    font-weight: 700;
+}
+
+#wrapper
+.middle.paragraph{
+    margin: 0 auto;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.box-img-2 {
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    justify-content: center; /* 주 축을 따라 요소들을 수직 방향으로 중앙 정렬 */
+    align-items: center; /* 교차 축을 따라 요소들을 수평 방향으로 중앙 정렬 */
+    padding: 25px;
+}
+
+/* 배경 이미지 설정 *//*outro*/
+#wrapper {
+    background-image: url('some.jpg'); /* 배경 이미지 경로 */
+    background-size: cover; /* 배경 이미지를 전체 영역에 맞춤 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 제거 */
+    width: 100%;
+    height: 100vh; /* 화면 높이에 맞게 설정 */
+    color: #000000; /* 텍스트 색상 흰색으로 설정 */
+}
+
+
+
+/* 텍스트를 포함하는 전체 래퍼 중앙 정렬 */
+#wrapper {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    background-image: url('some.jpg'); /* 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    color: #000000;
+    padding: 20px;
+}
+
+/* 중앙 배치를 위해 .paragraph를 flexbox로 설정 */
+.paragraph {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-align: center; /* 내부 텍스트를 중앙 정렬 */
+    flex-direction: column; /* 요소를 세로 방향으로 쌓음 */
+    max-width: 600px; /* 텍스트 너비 제한 */
+    margin: 0 auto; /* 좌우 여백 자동 설정 */
+}
+
+/* p 태그에 텍스트 중앙 정렬 적용 */
+.paragraph p {
+    text-align: center;
+}

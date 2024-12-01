@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병원 리스트</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('some.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(0.7); /* 배경을 살짝 어둡게 처리 */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            color: #000000; /* 텍스트s 설정 */
+        }
+        .search-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #333;
+        }
+        .hospital-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .hospital-item {
+            background-color: rgba(0, 0, 0, 0.7); /* 어두운 투명 배경 */
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .hospital-name {
+            font-size: 1.5em;
+            color: #fff;
+        }
+        .hospital-location, .hospital-contact {
+            font-size: 1em;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 배경 -->
+    <div class="background"></div>
+
+    <div class="container">
+        <h1>병원 리스트</h1>
+        
+        <!-- 검색창 -->
+        <input type="text" id="searchBox" class="search-box" placeholder="병원 이름을 검색하세요..." onkeyup="filterHospitals()">
+
+        <!-- 병원 리스트 -->
+        <ul class="hospital-list" id="hospitalList">
+            <li class="hospital-item">
+                <div class="hospital-name">강북삼성병원</div>
+                <div class="hospital-location">서울 종로구 새문안로 29 강북삼성병원</div>
+                <div class="hospital-contact">전화: 1599-8114</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">서울적십자 병원</div>
+                <div class="hospital-location">서울 종로구 새문안로 9</div>
+                <div class="hospital-contact">전화: 02-2002-8000</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">덕수한의원</div>
+                <div class="hospital-location">서울 중구 세종대로20길 19 유성빌딩 2층</div>
+                <div class="hospital-contact">전화: 02-734-1005</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">맥락한의원</div>
+                <div class="hospital-location">서울 중구 서소문로 134 2층</div>
+                <div class="hospital-contact">전화: 0507-1406-7252</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">스마일마취통증의학과의원(정형외과)</div>
+                <div class="hospital-location">서울 종로구 새문안로 89 정우빌딩 8층.</div>
+                <div class="hospital-contact">전화: 0507-1436-0275</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">서대문정형외과의원(정형외과)</div>
+                <div class="hospital-location">서울 서대문구 충정로 70 웨스트게이트타워 2층</div>
+                <div class="hospital-contact">전화: 02-365-0119</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">서울삼성내과의원(내과)</div>
+                <div class="hospital-location">서울 중구 통일로 114 바바엥 2, 2층</div>
+                <div class="hospital-contact">전화: 02-365-1478</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">두리안이비인후과(이비인후과)</div>
+                <div class="hospital-location">서울 종로구 통일로 134 디타워돈의문 지하1층 B101</div>
+                <div class="hospital-contact">전화: 02-737-8275</div>
+            </li>
+            <li class="hospital-item">
+                <div class="hospital-name">김안과의원(안과)</div>
+                <div class="hospital-location">서울 서대문구 통일로 107</div>
+                <div class="hospital-contact">전화: 02-313-2509</div>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <script>
+        function filterHospitals() {
+            const searchBox = document.getElementById('searchBox');
+            const filter = searchBox.value.toLowerCase();
+            const hospitalList = document.getElementById('hospitalList');
+            const hospitals = hospitalList.getElementsByClassName('hospital-item');
+
+            for (let i = 0; i < hospitals.length; i++) {
+                const hospitalName = hospitals[i].getElementsByClassName('hospital-name')[0];
+                const textValue = hospitalName.textContent || hospitalName.innerText;
+                if (textValue.toLowerCase().indexOf(filter) > -1) {
+                    hospitals[i].style.display = "";
+                } else {
+                    hospitals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

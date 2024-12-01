@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청소년 건강 문제 마인드맵</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .mindmap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .node {
+            padding: 15px;
+            margin: 15px;
+            border: 2px solid #5a5a5a;
+            border-radius: 8px;
+            background-color: #ffffff;
+            cursor: pointer;
+            width: 250px;
+            transition: background-color 0.3s;
+        }
+
+        .node:hover {
+            background-color: #e0e0e0;
+        }
+
+        .sub-node {
+            margin-top: 10px;
+            display: none;
+            text-align: left;
+        }
+
+        .sub-node ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sub-node ul li {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .active .sub-node {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="mindmap">
+    <!-- 청소년 건강문제 제목 -->
+    <h2>청소년 건강문제</h2>
+
+    <div class="node" onclick="openNewWindow('눈 건강')">
+        눈 건강
+        <div class="sub-node">
+            <ul>
+                <li>디지털 기기 사용 증가</li>
+                <li>눈 피로</li>
+                <li>시력 저하</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="node" onclick="openNewWindow('정신 건강')">
+        정신 건강
+        <div class="sub-node">
+            <ul>
+                <li>스트레스</li>
+                <li>우울증</li>
+                <li>불안</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="node" onclick="openNewWindow('비만 및 영양문제')">
+        비만 및 영양문제
+        <div class="sub-node">
+            <ul>
+                <li>불균형한 식습관</li>
+                <li>패스트푸드 섭취 증가</li>
+                <li>운동 부족</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="node" onclick="openNewWindow('수면 부족')">
+        수면 부족
+        <div class="sub-node">
+            <ul>
+                <li>학업 스트레스</li>
+                <li>전자기기 사용</li>
+                <li>불규칙한 수면 패턴</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 허리 문제 항목 -->
+    <div class="node" onclick="openNewWindow('허리 문제')">
+        허리 문제
+        <div class="sub-node">
+            <ul>
+                <li>잘못된 자세</li>
+                <li>과도한 스마트폰 사용</li>
+                <li>운동 부족</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 손목 및 발목 문제 항목 (손목 문제와 발목 문제를 합침) -->
+    <div class="node" onclick="openNewWindow('손목 및 발목 문제')">
+        손목 및 발목 문제
+        <div class="sub-node">
+            <ul>
+                <li>스마트폰 과도한 사용</li>
+                <li>잘못된 자세</li>
+                <li>운동 부족</li>
+                <li>불균형한 자세</li>
+                <li>과도한 운동</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 각 항목에 대한 정보를 미리 정의합니다.
+    const contentData = {
+        "눈 건강": `
+            <h1>눈 건강</h1>
+            <p>원인: <br>
+             스마트폰 및 전자기기 사용, 부적절한 자세, 영양 부족, 정기적인 검진의 부족</p>
+            <p>해결방안 : <br>
+            스크린 시간 관리 ( 20-20-20 규칙 활용 : 매 20분마다 20피트 떨어진 곳을 20초 바라보기 + 전자기기 사용 시간 줄이기)<br>
+            올바른 자세 유지 ( 책이나 화면을 눈높이에 맞추고, 바른 자세 앉도록 하기 + 화면과 적절한 거리 (약50-70cm) 유지)<br>
+            눈 건강에 좋은 식사 ( 비타민A가 풍부한 당근, 시금치, 생선 등 섭취)<br>
+            정기적인 안과 가기 (1년에 한 번) (1년에 한 번)</p>
+        `,
+        "정신 건강": `
+            <h1>정신 건강</h1>
+            <p>원인 : <br>
+            스트레스, 압박감</p>
+            <p>해결방법 : <br>
+            부모(친구, 선생님등)와 자주 대화 나누기, 학교나 지역 사회에서 멘토링 프로그램 운영하기, 규칙적으로 운동하기</p>
+        `,
+        "비만 및 영양문제": `
+            <h1>비만 및 영양문제</h1>
+            <p>원인 : <br>
+            불균형한 식습관, 운동부족, 스트레스 및 정서적 요인</p>
+            <p>해결방법 : <br>
+            건강한 식습관과 규칙적인 운동 혹은 스포츠 활동하기, 다른 활동으로 스트레스 풀기</p>
+        `,
+        "수면 부족": `
+            <h1>수면 부족</h1>
+            <p>원인 : <br> 
+            스마트폰 및 전자기기 사용, 학업 스트레스, 불규칙한 생활 패턴, 카페인 섭취</p>
+            <p> 해결방안 : <br>
+            수면환경 개선하기(조용하고 어두운 환경 만들기, 자신의 몸에 맞는 편안한 침대, 베개 등 사용하기)<br>
+            전자기기 사용제한( 잠자기 전 30분 - 1시간 동안 전자기기 사용 자제하기)<br>
+            규칙적인 수면습관 만들기(매일 같은 시간에 자고 일어나는 습관을 들여 수면 리듬을 규칙적으로 유지하기)<br>
+            스트레스 관리(명상이나 운동, 취미활동을 통해 스트레스 풀기 및 마음의 안정 찾기)<br>
+            카페인 제한(오후 시간 이후 카페인 음료의 섭취를 줄이기)</p>
+        `,
+        "허리 문제": `
+            <h1>허리 문제</h1>
+            <p>원인 : <br>
+            잘못된 자세, 운동부족, 과도한 체중, 스트레스</p>
+            <p>해결방안 : <br>
+            올바른 자세(앉거나 설 때 올바른 자세 유지, 장시간 앉아 있는 청소년들 같은 경우 자주 자세를 바꾸기)<br>
+            규칙적인 운동(허리 근육을 강화하는 운동, 스트레칭, 유산소 운동하기)<br>
+            스트레스 관리 (요가, 명상, 취미활동 등을 통해 관리하기)<br>
+            <br>
+           <a href="https://youtu.be/T9jMXWFauhs?si=rmm8U9ssAasXRTgC" target="_blank">허리 스트레칭 - 땅끄부부</a></p>
+        `,
+        "손목 및 발목 문제": `
+            <h1>손목 및 발목 문제</h1>
+            <p>원인 : <br>
+            과도한 스마트폰 사용, 근육 약화, 손목 및 발목 부담감 주기</p>
+            <p>해결방안 : <br>
+            스트레칭 및 강화 운동( 손목과 발목을 강화하는 운동과 스트칭을 통해 유연성을 높이고 근력 강화하기)<br>
+            휴식 취하기( 손목이나 발목에 통증이 느껴지면 충분한 휴식을 취하고 무리하지 않기)<br>
+            손목(발목) 보호대 하기<br>
+            <br>
+            <a href="https://youtu.be/bHPYSJv23ag?si=8hGeDhFB70B8NMYb" target="_blank">손목 스트레칭</a><br>
+            <a href="https://youtu.be/ynAMChUuJkU?si=ZXHnwOD_-g6DRm5y" target="_blank">발목 스트레칭</a>
+</p>
+        `
+    };
+
+    // 클릭 시 새 창 열기 함수
+    function openNewWindow(topic) {
+        // 새 창에 표시할 내용을 가져옵니다.
+        let content = contentData[topic] || `<h1>${topic}</h1><p>해당 항목에 대한 정보가 없습니다.</p>`;
+
+        // 새 창 열기
+        let newWindow = window.open('', '', 'width=600,height=400');
+        newWindow.document.write(content);
+        newWindow.document.close();
+    }
+</script>
+
+</body>
+</html>
